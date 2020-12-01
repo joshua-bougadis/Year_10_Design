@@ -1,0 +1,239 @@
+<html>
+
+    <head>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="styles.css">
+        <title>
+
+            Online Advertisement Sender
+
+        </title>
+        
+    <style>
+        
+    </style>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+    
+    <body style="background-color:black;">
+        
+        <ul>
+            <li><a class="active" href="Page1.html">Home</a></li>
+            <li><a href="Page2.html">About</a></li>
+            <li><a href="Page3.html">Contact</a></li>
+        </ul>
+        
+        <center><h1 class = "texto"> Online Advertisement Sender</h1></center>
+        <center><h4 class = "texto"> By Joshua Bougadis Y10</h4></center>
+        
+        <br><br>
+        
+        <div class = div1 id = "myh3">
+        <center><div>
+        <label class = "texto2" id = "email1" for="fname">Email:</label>
+        <input style="font-size:20px" type="email" id = "mysearch"  required minlength="4" maxlength="30" size="30">
+        </div></center>
+        
+        <br>
+        
+        <center>
+            <input type="submit" onclick = "emailIsValid()" id = "submit" value="Submit Now!"></center>
+        
+        <br>
+        
+        <center><ul id="parent">
+            <li style = "" class = texto2> Your email is verified as: </li>
+            <li style = "" class = texto2 id = "texts1"></li>
+        </ul></center>
+        
+        </div>
+        
+        <center><table>
+        <tr>
+        <td>
+        <center><button onclick = "myFuncto()"> appear </button></center>  
+        </td>
+        <td>
+         <center><button onclick = "myFuncto2()"> disappear </button></center>   
+        </td>
+        </tr>
+        </table></center>
+        
+        <br>
+        
+        <hr>
+        
+        <br><br>
+        
+        <center><div>
+        <label class = "texto2" id = "email1" class="emailtext" for="fname">From:</label>
+        <input style="font-size:20px" class="emailbox2" type="email" id = "email1"  required minlength="4" maxlength="30" size="24">
+       </div> </center>
+        
+        <br>
+        
+        <center><div>
+        <label class = "texto2" id = "email1" class="emailtext" for="fname">To:</label>
+        <input style="font-size:20px" class="emailbox" type="email" id = "email2"  required minlength="4" maxlength="30" size="24">
+       </div> </center>
+        
+        <br>
+        
+        <center><div>
+        <label class = "texto2" class="emailtext" id = "email1" for="fname">Subject:</label>
+        <input style="font-size:20px" type="email" id = "subject1"  required minlength="4" maxlength="30" size="24">
+        </div></center>
+        
+        <br>
+        
+        <center><div>
+        <label class = "texto2" id = "email1" for="fname">Body:</label>
+        <input style="font-size:20px" class="bodybox" type="email" id = "body1"  required minlength="4" maxlength="200" size="27">
+        </div></center>
+        
+        <br>
+        
+        <center><table>
+        <tr>
+        <td>
+        <center><input type="submit" onclick = "runIt()" id = "submit" class = "sendit" value="Send email"></center>  
+        </td>
+        </tr>
+        </table></center>
+    
+         
+  
+        
+        <div class="navbar">
+  <center><button id = myBtn class = butn>About the Creator</button></center>
+</div>
+    
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+<div class="modal-content">
+      
+    <span class="close">&times;</span>
+    
+    <table>
+    <tr>
+    <td>
+    <h2>Joshua Bougadis</h2>
+    <h4> About </h4>
+      <p class = "text1"> My name is Joshua Bougadis and I am 15 years old. I was born on June 3, 2005 in toronto, and I currently am within grade 10 at Upper Canada College in Toronto. Some of my interests include hockey, piano, and mathematics. This project is intended for my intro to computer science class ICS3U, and was created to show my ability to use APIs.</p>
+    
+    <h4> Contact </h4>
+    <table>
+        <tr>
+            <td class = "td2">
+                <p> Email: joshua.bougadis@ucc.on.ca </p>
+            </td>
+            <td class = "td1">
+                <p> Cell: 6475498693 </p>
+            </td>
+        </tr>
+        <tr>
+            <td class = "td2">
+                <p> Instagram: joshua.bougadis </p>
+            </td>
+            <td class = "td1">
+                <p>  </p>
+            </td>
+        </tr>
+    </table>
+    </td>
+    <td>
+            
+    <img src="me.jpeg" alt="Avatar" width = 200px height = 200px align = "right" padding-right: 100px;>
+    
+    </td>
+    </tr>
+    </table>
+    
+  </div>
+
+</div>
+        
+        
+    
+    <script>
+    
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}     
+
+function emailIsValid(){
+    var email = document.getElementById("mysearch").value;
+    console.log(/\S+@\S+\.\S+/.test(email));
+    document.getElementById("texts1").innerHTML = "  " + /\S+@\S+\.\S+/.test(email)
+}   
+        
+function myFuncto(){
+        var theinput = document.getElementById("myh3");
+        theinput.style.display="block"; 
+        
+    }
+    
+function myFuncto2() {
+    var theinput2 = document.getElementById("myh3");
+    theinput2.style.display="none";
+    }
+    
+    document.getElementById('body1').style.height="100px";
+    document.getElementById('body1').style.fontSize="14pt";
+        
+//    fetch('endpoint', {
+//  headers: {"fieldName1": "fieldData", "fieldName2":"fieldData"}
+//})
+
+//Endpoint = your api
+//headers is a dictionary of field names and values
+//in your api they specifically tell you to use username and password 
+        
+function runIt() {
+    var element1 = document.getElementById("email1").value;
+    var to = document.getElementById("email2").value;
+    var subject = document.getElementById("subject1").value;
+    var body = document.getElementById("body1").value;
+    
+Email.send({
+SecureToken : "a59700a1-8adb-4c82-998c-58d2598d4e72",
+To : to,
+From : element1,
+Subject: subject,
+Body: body
+})
+.then(function (message) {
+alert("Your mail has been sent successfully to " + to)
+});
+}
+    </script>
+    
+    </body>
+    
+    
+</html>
